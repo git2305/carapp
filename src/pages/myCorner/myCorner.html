@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>My Corner</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            My Vehicle
+        </ion-list-header>
+        <ion-item (click)="searchResultsPage('Vehicles Sold', 'My Sold Cars')">
+            Vehicles Sold
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item (click)="searchResultsPage('Vehicles Purchased', 'My Purchased Cars')">
+            Vehicles Purchased
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item (click)="searchResultsPage('Vehicles In Auktion', 'My Auktion Cars')">
+            Vehicles In Auktion
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item (click)="searchResultsPage('My Favourite Vehicles', 'My Favourite Cars')">
+            My Favourite Vehicles
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item [navPush]="" class="noBorder">
+            My Invoices
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-list-header>
+            Profile
+        </ion-list-header>
+        <ion-item [navPush]="changeProfileDataPage">
+            Change Profile Data
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item [navPush]="changePasswordPage">
+            Change Password
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+        <ion-item [navPush]="" class="noBorder">
+            Delete Account
+        </ion-item>
+        <ion-list-header>
+            Settings
+        </ion-list-header>
+        <ion-item [navPush]="emailPreferencePage">
+            Email Preferences
+            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>

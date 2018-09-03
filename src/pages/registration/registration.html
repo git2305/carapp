@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-divider>
+      Company Data
+    </ion-item-divider>
+    <ion-item style="border-top:none;">
+      <ion-label floating>Company</ion-label>
+      <ion-input type="text" [(ngModel)]="company.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Addition</ion-label>
+      <ion-input type="text" [(ngModel)]="company.addition"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Street/No</ion-label>
+      <ion-input type="text" [(ngModel)]="company.street"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>PO box</ion-label>
+      <ion-input type="text" [(ngModel)]="company.pob"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Postcode / Town*</ion-label>
+      <ion-input type="text" [(ngModel)]="company.town"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Country*</ion-label>
+      <ion-select [(ngModel)]="company.country">
+        <ion-option>Switzerland</ion-option>
+        <ion-option value="20">Austria</ion-option>
+        <ion-option value="1">Belgium</ion-option>
+        <ion-option value="2">Bulgaria</ion-option>
+        <ion-option value="11">Croatia</ion-option>
+        <ion-option value="3">Czech Republic</ion-option>
+        <ion-option value="4">Denmark</ion-option>
+        <ion-option value="6">Estonia</ion-option>
+        <ion-option value="26">Finland</ion-option>
+        <ion-option value="10">France</ion-option>
+        <ion-option value="5">Germany</ion-option>
+        <ion-option value="29">Great Britain</ion-option>
+        <ion-option value="8">Greece</ion-option>
+        <ion-option value="17">Hungary</ion-option>
+        <ion-option value="7">Ireland</ion-option>
+        <ion-option value="12">Italy</ion-option>
+        <ion-option value="14">Latvia</ion-option>
+        <ion-option value="30">Liechtenstein</ion-option>
+        <ion-option value="15">Lithuania</ion-option>
+        <ion-option value="16">Luxembourg</ion-option>
+        <ion-option value="31">Monaco</ion-option>
+        <ion-option value="19">Netherlands</ion-option>
+        <ion-option value="21">Poland</ion-option>
+        <ion-option value="22">Portugal</ion-option>
+        <ion-option value="23">Romania</ion-option>
+        <ion-option value="33">Serbia</ion-option>
+        <ion-option value="25">Slovakia</ion-option>
+        <ion-option value="24">Slovenia</ion-option>
+        <ion-option value="9">Spain</ion-option>
+        <ion-option value="27">Sweden</ion-option>
+        <ion-option value="28">Switzerland</ion-option>
+        <ion-option value="32">Ukraine</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Car Dealership</ion-label>
+      <ion-textarea type="text" [(ngModel)]="company.car_dealership"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Motorcycle Dealership</ion-label>
+      <ion-textarea type="text" [(ngModel)]="company.motorcycle_dealership"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Commercial Dealership</ion-label>
+      <ion-textarea type="text" [(ngModel)]="company.com_vehicle_dealership"></ion-textarea>
+    </ion-item>
+    <ion-item-divider>
+      Personal details
+    </ion-item-divider>
+    <ion-item style="border-top:none;">
+      <ion-label floating>Form of address*</ion-label>
+      <ion-input type="text" [(ngModel)]="user.prefix_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>First name*</ion-label>
+      <ion-input type="text" [(ngModel)]="user.fname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Surname*</ion-label>
+      <ion-input type="text" [(ngModel)]="user.lname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email*</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telephone*</ion-label>
+      <ion-input type="tel" [(ngModel)]="user.phone_code"></ion-input>
+      <ion-input type="tel" [(ngModel)]="user.phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Mobile</ion-label>
+      <ion-input type="text" [(ngModel)]="user.mobile_code"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.mobile"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Preferred language</ion-label>
+      <ion-select [(ngModel)]="user.language">
+        <ion-option value="">Please Select</ion-option>
+        <ion-option value="German">German</ion-option>
+        <ion-option value="French">French</ion-option>
+        <ion-option value="Italian">Italian</ion-option>
+        <ion-option value="English">English</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item-divider>
+      Login details
+    </ion-item-divider>
+    <ion-item text-wrap>
+      <ion-label>Please note that your username will be displayed if you place a bid</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Username* (Min. 6, max. 8 characters)</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password* (At least 8 characters, uppercase/lowercase letters and numbers)</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Re-enter password*</ion-label>
+      <ion-input type="password" [(ngModel)]="user.repassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>How did you find out about us?*</ion-label>
+      <ion-select [(ngModel)]="user.site_reference">
+        <ion-option value="FLEET">About Fleet</ion-option>
+        <ion-option value="AD">Advertisement</ion-option>
+        <ion-option value="EVENT">Event</ion-option>
+        <ion-option value="GARAGE">Le Garage</ion-option>
+        <ion-option value="OTHER">Other</ion-option>
+        <ion-option value="RECOMMENDATION">Personal recommendation</ion-option>
+        <ion-option value="SEARCHENGINE">Search engine</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>I hereby confirm that I have read and understood the General Terms and Conditions and that I agree to them*</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="user.terms"></ion-checkbox>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>CARAUKTION AG is hereby authorised to obtain external information about the company/person to be registered*</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="user.carauktion_ag"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <button ion-button full class="redbutton" (click)="register()">Register</button>
+</ion-content>

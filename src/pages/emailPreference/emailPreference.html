@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Email Preferences</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Send Email Notifications?</ion-label>
+      <ion-checkbox [(ngModel)]="send"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <div style="padding:0 10px;">
+    <button ion-button block class="redbutton" (click)="save()">Save</button>
+  </div>
+
+</ion-content>

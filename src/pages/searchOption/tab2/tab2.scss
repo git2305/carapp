@@ -1,0 +1,28 @@
+page-tab2{
+    ion-select{
+        max-width: 100%;
+        width: 95%;
+    }
+    .noMargin .item-ios{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .headerTab .toolbar-background {
+        background: #2b2e34 !important;
+        margin-top: 1px;
+    }
+    ion-buttons button{
+        width:48%;
+        padding:0 !important;
+        margin:0 !important;
+        text-align: center !important;
+        font-size: 15px !important;
+    }
+    ion-buttons button:first-child{
+        border-right: 1px solid white;
+    }
+    ion-buttons button.active{
+        background: white;
+        color: red;
+    }
+}

@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>About Us</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <img src="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/2014/02/Olympic-logo.png" />
+    <div class="description">
+        <ion-list>
+            <ion-item [navPush]="registrationPage">
+                <ion-icon name="ios-person-add" item-left></ion-icon>
+                Registration
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item [navPush]="sellVehiclePage">
+                <ion-icon name="ios-car" item-left></ion-icon>
+                Sell Vehicle
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item [navPush]="searchOptionPage">
+                <ion-icon name="ios-search" item-left></ion-icon>
+                Search Option
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item [navPush]="myCornerPage">
+                <ion-icon name="ios-person" item-left></ion-icon>
+                My Corner
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item [navPush]="signInPage">
+                <ion-icon name="ios-power" item-left></ion-icon>
+                Log out
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

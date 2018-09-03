@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Search Option</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <ion-list class="noMargin">
+        <ion-item>
+            <ion-input type="text" placeholder="Search Make" [ngModel]="make" (ngModelChange)="searchMake($event)"></ion-input>                
+        </ion-item>
+        <ion-item *ngFor="let make of makes" (click)="makeSelected(make.text)">{{make.text}}</ion-item>
+        <ion-item>
+            <ion-input type="text" placeholder="Search Model" [ngModel]="model" (ngModelChange)="searchModel($event)"></ion-input>
+        </ion-item>
+        <ion-item *ngFor="let model of models" (click)="modelSelected(model.text)">{{model.text}}</ion-item>
+        <ion-item>
+            <ion-select [(ngModel)]="selectedRegion">
+                <ion-option value="">Select Region</ion-option>
+                <ion-option *ngFor="let item of regions" value="{{item.value}}" selected="{{item.checked}}">{{item.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-select [(ngModel)]="minYear">
+                <ion-option value="">--Min Year--</ion-option>
+                <ion-option value="2000">2000</ion-option>
+                <ion-option value="2001">2001</ion-option>
+                <ion-option value="2002">2002</ion-option>
+                <ion-option value="2003">2003</ion-option>
+                <ion-option value="2004">2004</ion-option>
+                <ion-option value="2005">2005</ion-option>
+                <ion-option value="2006">2006</ion-option>
+                <ion-option value="2007">2007</ion-option>
+                <ion-option value="2008">2008</ion-option>
+                <ion-option value="2009">2009</ion-option>
+                <ion-option value="2010">2010</ion-option>
+                <ion-option value="2011">2011</ion-option>
+                <ion-option value="2012">2012</ion-option>
+                <ion-option value="2013">2013</ion-option>
+                <ion-option value="2014">2014</ion-option>
+                <ion-option value="2015">2015</ion-option>
+                <ion-option value="2016">2016</ion-option>
+                <ion-option value="2017">2017</ion-option>
+                <ion-option value="2018">2018</ion-option>
+                <ion-option value="2019">2019</ion-option>
+                <ion-option value="2020">2020</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-select [(ngModel)]="maxYear">
+                <ion-option value="">--Max Year--</ion-option>
+                <ion-option value="2000">2000</ion-option>
+                <ion-option value="2001">2001</ion-option>
+                <ion-option value="2002">2002</ion-option>
+                <ion-option value="2003">2003</ion-option>
+                <ion-option value="2004">2004</ion-option>
+                <ion-option value="2005">2005</ion-option>
+                <ion-option value="2006">2006</ion-option>
+                <ion-option value="2007">2007</ion-option>
+                <ion-option value="2008">2008</ion-option>
+                <ion-option value="2009">2009</ion-option>
+                <ion-option value="2010">2010</ion-option>
+                <ion-option value="2011">2011</ion-option>
+                <ion-option value="2012">2012</ion-option>
+                <ion-option value="2013">2013</ion-option>
+                <ion-option value="2014">2014</ion-option>
+                <ion-option value="2015">2015</ion-option>
+                <ion-option value="2016">2016</ion-option>
+                <ion-option value="2017">2017</ion-option>
+                <ion-option value="2018">2018</ion-option>
+                <ion-option value="2019">2019</ion-option>
+                <ion-option value="2020">2020</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button full class="redbutton" (click)="search()">
+      Search
+    </button>
+    </ion-toolbar>
+</ion-footer>

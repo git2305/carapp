@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Contact Us</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="description">
+        <ion-list>
+            <ion-item [navPush]="registrationPage">
+                <ion-icon name="ios-person-add" item-left></ion-icon>
+                +00 00000 00000
+            </ion-item>
+            <ion-item [navPush]="sellVehiclePage">
+                <ion-icon name="ios-car" item-left></ion-icon>
+                +00 00000 00000
+            </ion-item>
+            <ion-item [navPush]="searchOptionPage">
+                <ion-icon name="ios-search" item-left></ion-icon>
+                test@mail.com
+            </ion-item>
+            <ion-item [navPush]="myCornerPage">
+                <ion-icon name="ios-person" item-left></ion-icon>
+                ef24.ch/carlisting
+            </ion-item>
+            <ion-item [navPush]="signInPage">
+                <ion-icon name="ios-power" item-left></ion-icon>
+                3rd main 4th Street ZH
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

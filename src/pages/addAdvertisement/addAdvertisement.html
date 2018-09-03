@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Advertisement</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item style="border-top:none;">
+      <ion-input type="text" placeholder="1st reg. *"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Model No. *"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div style="padding:0 10px;">
+    <button ion-button block class="redbutton" (click)="search()">Search</button>
+  </div>
+
+  <div style="padding:20px">
+    Search your vehicle by production duration and vehicle make and model.
+  </div>  
+
+  <ion-list class="noMargin">
+    <ion-item>
+      <ion-select>
+        <ion-option selected="true">Select Make</ion-option>
+        <ion-option>Option</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select>
+        <ion-option selected="true">Select Model</ion-option>
+        <ion-option>Option</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select>
+        <ion-option selected="true">Select Region</ion-option>
+        <ion-option>Option</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select>
+        <ion-option selected="true">--Min Year--</ion-option>
+        <ion-option>Option</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select>
+        <ion-option selected="true">--Max Year--</ion-option>
+        <ion-option>Option</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div style="padding:0 10px;">
+    <button ion-button block class="redbutton" (click)="next()">Next</button>
+  </div>
+
+</ion-content>

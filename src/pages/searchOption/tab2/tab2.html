@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Search Option</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>   
+    <ion-list radio-group [(ngModel)]="bodyType">
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Suv</ion-label>
+            <ion-radio value="SUV"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Limousine</ion-label>
+            <ion-radio value="Limousine"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Minivan</ion-label>
+            <ion-radio value="Minivan"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Pickup</ion-label>
+            <ion-radio value="Pickup"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Bus</ion-label>
+            <ion-radio value="Bus"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Cabriolet</ion-label>
+            <ion-radio value="Cabrio"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Kombi</ion-label>
+            <ion-radio value="Kombi"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Kleinwagen</ion-label>
+            <ion-radio value="Kleinwagen"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ios-car" item-left></ion-icon>
+            <ion-label>Coupe</ion-label>
+            <ion-radio value="Coupe"></ion-radio>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full class="redbutton" (click)="search()">
+      Search
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-toolbar style="color:red;font-weight:bold;" *ngIf="subTitle">
+        {{subTitle}}
+    </ion-toolbar>
+    <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4>
+                <div class="text-center">
+                    <img class="vehicle-image img-thumbnail" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
+                </div>
+              </ion-col>
+              <ion-col col-8>
+                <ion-row>
+                  <ion-col col-12>
+                    <p>{{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} 
+                        <span *ngIf="actionType == 'vehicles_in_auction'" class="pull-right"><countdown-timer class="countdown-timer" [timeOnly]="true" [end]= [vehicle.Vehicle.auction_ovr_tym] ></countdown-timer></span>
+                    </p>
+                    <p>
+                      CHF<strong>{{vehicle.Vehicle.min_auction_price}}</strong>
+                    </p>
+                    <p>
+                      <i class="fa fa-road" aria-hidden="true"></i> {{vehicle.Vehicle.kilometers}} Kms
+                      <i class="fa fa-calendar mar-right-10" aria-hidden="true"></i> {{vehicle.Vehicle.first_reg}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let vehicle of favouriteData" (click)="openVehicleDetailsPage(vehicle)">
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4>
+                <div class="text-center">
+                    <img class="vehicle-image img-thumbnail" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
+                </div>
+              </ion-col>
+              <ion-col col-8>
+                <ion-row>
+                  <ion-col col-12>
+                    <p>{{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} <span *ngIf="actionType == 'vehicles_in_auction'" class="pull-right"><countdown-timer class="countdown-timer" [timeOnly]="true" [end]= [vehicle.Vehicle.auction_ovr_tym] ></countdown-timer></span></p>
+                    <p>
+                      CHF<strong>{{vehicle.Vehicle.min_auction_price}}</strong>
+                    </p>
+                    <p>
+                      <i class="fa fa-road" aria-hidden="true"></i> {{vehicle.Vehicle.kilometers}} Kms
+                      <i class="fa fa-calendar mar-right-10" aria-hidden="true"></i> {{vehicle.Vehicle.first_reg}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let vehicle of myAuctionData" (click)="openVehicleDetailsPage(vehicle)">
+        <ion-card-content>
+            <ion-row>
+              <ion-col col-4>
+                <div class="text-center">
+                    <img class="vehicle-image img-thumbnail" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
+                </div>
+              </ion-col>
+              <ion-col col-8>
+                <ion-row>
+                  <ion-col col-12>
+                    <p>{{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} <span *ngIf="actionType == 'vehicles_in_auction'" class="pull-right"><countdown-timer class="countdown-timer" [timeOnly]="true" [end]= [vehicle.Vehicle.auction_ovr_tym] ></countdown-timer></span></p>
+                    <p>
+                      CHF<strong>{{vehicle.Vehicle.min_auction_price}}</strong>
+                    </p>
+                    <p>
+                      <i class="fa fa-road" aria-hidden="true"></i> {{vehicle.Vehicle.kilometers}} Kms
+                      <i class="fa fa-calendar mar-right-10" aria-hidden="true"></i> {{vehicle.Vehicle.first_reg}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+    </ion-card>
+</ion-content>

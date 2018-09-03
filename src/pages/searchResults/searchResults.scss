@@ -1,0 +1,49 @@
+page-searchresults{
+    ion-row{
+        /*background: red; */
+        background: #FFFFFF;
+        color: #000000;
+        line-height: 25px;
+    }
+    ion-select{
+        float: right;
+    }
+    .recentSubmission{
+        font-size: 18px;
+        padding: 10px;
+        color: red;
+        line-height: 40px;
+    }
+    .toolbar-content{
+        margin-left: 10px;
+    }
+
+    ion-card{
+        margin: 8px;
+        width: 100%;
+    }
+    .card-content-md{
+        padding: 0px;
+    }
+    .countdown-timer {
+        /*background: red;
+        color: white;*/
+        padding: 4px;
+        font-size: 12px;
+        border-radius: 3px;
+        background: #000000;
+        color: #FFFFFF;
+    }
+    .vehicle-image {
+        margin-top: 10px;
+    }
+    .card-content-ios{
+        padding: 5px;
+    }
+    .mar-right-10 {
+        margin-left: 10px;
+    }
+    .text-center {
+        text-align: center;
+    }
+}

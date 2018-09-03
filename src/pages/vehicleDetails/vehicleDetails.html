@@ -1,0 +1,231 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} {{vehicle.Vehicle.type}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides>
+    <ion-slide>
+      <img style="width:100%;" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />
+    </ion-slide>
+  </ion-slides>
+
+
+  <div>
+    <ion-row>
+      <ion-col col-12 class="vehicle-title">
+        {{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} {{vehicle.Vehicle.type}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        Auction Price: CHF{{vehicle.Vehicle.min_auction_price}}
+      </ion-col>
+      <ion-col col-6>
+          Buy Price: CHF{{vehicle.Vehicle.buy_now}}
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button full color="danger">Bid now</button>
+      </ion-col>
+      <ion-col col-6>
+          <strong><button ion-button full color="dark" (click)="buyNowVehicle();">Buy now</button></strong>
+        </ion-col>
+    </ion-row>
+
+    <!-- <ion-icon ios="ios-speedometer" name="speedometer"></ion-icon>
+            <ion-icon ios="ios-calendar" name="calendar"></ion-icon>
+            <ion-icon name="speedometer"></ion-icon> -->
+    <ion-row class="separator">
+      <ion-col col-12>
+        <i class="fa fa-road" aria-hidden="true"></i> {{vehicle.Vehicle.kilometers}} Kms
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{vehicle.Vehicle.first_reg}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <i class="fa fa-tachometer" aria-hidden="true"></i> {{vehicle.Vehicle.kw}} kW {{vehicle.Vehicle.hp}} hp</ion-col>
+    </ion-row>
+
+
+    <ion-row class="separator">
+      <ion-col col-12>
+        <h6 class="vehicle-detail-title">
+          <strong>Vehicle Detials</strong>
+        </h6>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p class="vehicle-detail-title">
+          <strong>Properties</strong>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Type
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.type}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Body Type
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.body_type}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Door count
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.doors}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-5>
+        Number of Seats
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.no_of_seats}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Number of Keys
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.no_of_keys}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-5>
+        Exterior Color
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.exterior_color}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-5>
+        Interior Color
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.interior_color}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <p class="vehicle-detail-title">
+          <strong>Drive</strong>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Gear Type
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.gear}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-5>
+        Displacement
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.displacement}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Wheel Drive
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.wheel_drive}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <p class="vehicle-detail-title">
+          <strong>Registration</strong>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Register Number
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.reg_no}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Model Number
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.vehicle_no}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Frame Number
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.frame_no}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Swiss Car
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.swiss_car == 1 ? 'Yes' : 'No' }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        Vehicle Region
+      </ion-col>
+      <ion-col col-7>
+        {{vehicle.Vehicle.vehicle_regions}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="separator">
+        <ion-col col-12>
+          <h6 class="vehicle-detail-title">
+            <strong>Vehicle Description</strong>
+          </h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12>
+            {{vehicle.Vehicle.additional_info}}
+          </ion-col>
+        </ion-row>
+  </div>
+</ion-content>

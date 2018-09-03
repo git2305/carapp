@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Change Profile Data</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-card [navPush]="vehicleDetailsPage">
+        <img src="http://www.cars.co.za/carimages_gen/BMW-M2/BMW-M2-M2-coupe_BMWM2_1c3v.jpg" />
+        <button ion-fab mini class="fabButton">
+          <ion-icon name="md-create" item-right></ion-icon>
+        </button>
+    </ion-card>
+    <ion-item style="border-top:none;">
+      <ion-input type="text" placeholder="Company"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Addition"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Street/No"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="PO box"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Postcode / Town*"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Country*"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Car Dealership"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Motorcycle Dealership"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Commercial vehicle Dealership"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div style="padding:0 10px;">
+    <button ion-button block class="redbutton" (click)="save()">Save</button>
+  </div>  
+</ion-content>

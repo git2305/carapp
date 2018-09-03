@@ -1,0 +1,30 @@
+page-vehicledetails {
+    ion-content{
+        // background: red !important;
+        // color: white !important;        
+        
+    }
+    .vehicle-title{
+        font-weight: bold;
+    }
+    .separator{ 
+        border-top: 1px solid #cccccc;
+    }
+
+    .vehicle-detail-title{
+        margin: 10px 0 0 0 !important;
+    }
+    
+    ion-row{
+        padding: 0 10px !important;
+    }
+    ion-slides {
+        height: 200px;
+    }
+    ion-slide img{
+        height: 200px !important;
+    }    
+    /*.row .col:first-child{
+        font-weight: bold;
+    }*/
+}
