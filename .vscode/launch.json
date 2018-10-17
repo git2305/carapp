@@ -5,11 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "name": "Run android on device",
+            "type": "cordova",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "platform": "android",
+            "target": "device",
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}"
         }
     ]
 }

@@ -1,0 +1,46 @@
+page-step-two {
+    
+    ion-content, .content-md{
+        // background-color: #e9e9e9;
+    }
+    .vehicle-images ion-card{
+        
+        display: inline-block;
+        width: 32%;
+        margin: 2px;
+        border-radius: 0;
+        text-align: center;
+    }
+    .vehicle-images ion-card img {
+        width: auto;
+    }
+    .clearfix {
+        clear: both;
+    }
+
+    .vehicle_document{
+        margin-top: 20px;
+    }
+    .document-icon{
+
+        font-size: 9.2em;
+        color: #999;
+    }
+
+    .block {
+        position: relative;
+    }
+    .deleteIcon {
+        position: absolute !important;
+        color: #ffffff !important;
+        margin-left: 80% !important;
+      }
+      .deleteIcon:before {
+        font-size: 30px !important;
+      }
+
+      img{
+        height: 80px;
+        object-fit: cover;
+      }
+}

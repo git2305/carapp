@@ -1,0 +1,337 @@
+<!--
+  Generated template for the StepOnePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Vehicle Data</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="noMargin">
+
+    <h5>Vehicle Data</h5>
+
+    <ion-item>
+      <ion-label stacked>Make</ion-label>
+      <ion-input type="text"   [ngModel]="vehicle.brand"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Model</ion-label>
+      <ion-input type="text"  [ngModel]="vehicle.model"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Type</ion-label>
+      <ion-input type="text"  [ngModel]="vehicle.type"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Body Type</ion-label>
+      <ion-select [(ngModel)]="vehicle.body_type">
+        <ion-option value="Limousine">Limousine</ion-option>
+        <ion-option value="Kombi">Kombi</ion-option>
+        <ion-option value="Cabrio">Cabrio</ion-option>
+        <ion-option value="Coupe">Coupe</ion-option>
+        <ion-option value="Bus">Bus</ion-option>
+        <ion-option value="SUV / Offroader">SUV / Offroader</ion-option>
+        <ion-option value="Minivan">Minivan</ion-option>
+        <ion-option value="Kleinwagen">Kleinwagen</ion-option>
+        <ion-option value="Pickup">Pickup</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Doors</ion-label>
+      <ion-select [(ngModel)]="vehicle.doors">
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Displacement</ion-label>
+      <ion-input type="text" [ngModel]="vehicle.displacement"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Wheel Drive</ion-label>
+      <ion-select [(ngModel)]="vehicle.wheel_drive">
+        <ion-option value="Front">Front</ion-option>
+        <ion-option value="Heck">Heck</ion-option>
+        <ion-option value="4x4">4x4</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Gears</ion-label>
+      <ion-select [(ngModel)]="vehicle.gear">
+        <ion-option value="Manuell">Manuell</ion-option>
+        <ion-option value="Automat">Automat</ion-option>
+        <ion-option value="A-sequent.">A-sequent.</ion-option>
+        <ion-option value="Halbautomat">Halbautomat</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Fuel</ion-label>
+      <ion-select [(ngModel)]="vehicle.fuel">
+        <ion-option value="Benzin">Benzin</ion-option>
+        <ion-option value="Diesel">Diesel</ion-option>
+        <ion-option value="Elektro">Elektro</ion-option>
+        <ion-option value="Gas (CNG)">Gas (CNG)</ion-option>
+        <ion-option value="Hybrid">Hybrid</ion-option>
+        <ion-option value="Gas (LPG)">Gas (LPG)</ion-option>
+        <ion-option value="Hybrid/Benzin">Hybrid/Benzin</ion-option>
+        <ion-option value="Hybrid/Diesel">Hybrid/Diesel</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Performance</ion-label>
+      <ion-input [(ngModel)]="vehicle.hp" placeholder="HP"></ion-input>
+      <ion-input [(ngModel)]="vehicle.kw" placeholder="KW"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Number of Seats</ion-label>
+      <ion-select [(ngModel)]="vehicle.no_of_seats">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <h5>Further Information</h5>
+
+    <ion-item>
+      <!-- <ion-input type="text" placeholder="1st Reg." [ngModel]="first_reg"></ion-input> -->
+      <ion-datetime placeholder="1st Reg." displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="vehicle.first_reg"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Kilometers</ion-label>
+      <ion-input type="number" [ngModel]="vehicle.kilometers"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Exterior Color</ion-label>
+      <ion-select [(ngModel)]="vehicle.exterior_color">
+        <ion-option value="Anthracite">Anthracite</ion-option>
+        <ion-option value="Beige">Beige</ion-option>
+        <ion-option value="Black">Black</ion-option>
+        <ion-option value="Blue">Blue</ion-option>
+        <ion-option value="Bordeaux">Bordeaux</ion-option>
+        <ion-option value="Brown">Brown</ion-option>
+        <ion-option value="Gold">Gold</ion-option>
+        <ion-option value="Green">Green</ion-option>
+        <ion-option value="Grey">Grey</ion-option>
+        <ion-option value="Orange">Orange</ion-option>
+        <ion-option value="Other">Other</ion-option>
+        <ion-option value="Pink">Pink</ion-option>
+        <ion-option value="Red">Red</ion-option>
+        <ion-option value="Silver">Silver</ion-option>
+        <ion-option value="Turquoise">Turquoise</ion-option>
+        <ion-option value="Violet">Violet</ion-option>
+        <ion-option value="White">White</ion-option>
+        <ion-option value="Yellow">Yellow</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Car Finish</ion-label>
+      <ion-select [(ngModel)]="vehicle.car_finish">
+        <ion-option value="Bubble effect">Bubble effect</ion-option>
+        <ion-option value="Individual paint">Individual paint</ion-option>
+        <ion-option value="Matt paint">Matt paint</ion-option>
+        <ion-option value="Mettalic">Mettalic</ion-option>
+        <ion-option value="Solid paint">Solid paint</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Interior Color</ion-label>
+      <ion-select [(ngModel)]="vehicle.interior_color">
+        <ion-option value="Anthracite">Anthracite</ion-option>
+        <ion-option value="Beige">Beige</ion-option>
+        <ion-option value="Black">Black</ion-option>
+        <ion-option value="Blue">Blue</ion-option>
+        <ion-option value="Bordeaux">Bordeaux</ion-option>
+        <ion-option value="Brown">Brown</ion-option>
+        <ion-option value="Gold">Gold</ion-option>
+        <ion-option value="Green">Green</ion-option>
+        <ion-option value="Grey">Grey</ion-option>
+        <ion-option value="Orange">Orange</ion-option>
+        <ion-option value="Other">Other</ion-option>
+        <ion-option value="Pink">Pink</ion-option>
+        <ion-option value="Red">Red</ion-option>
+        <ion-option value="Silver">Silver</ion-option>
+        <ion-option value="Turquoise">Turquoise</ion-option>
+        <ion-option value="Violet">Violet</ion-option>
+        <ion-option value="White">White</ion-option>
+        <ion-option value="Yellow">Yellow</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Options / Additional information</ion-label>
+      <ion-textarea [(ngModel)]="vehicle.additional_info"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Gen. Condition</ion-label>
+      <ion-select [(ngModel)]="vehicle.gen_condition" multiple="true">
+        <ion-option>Vehicle involved in accident</ion-option>
+        <ion-option>Dog owner</ion-option>
+        <ion-option>Smoker's vehicle</ion-option>
+        <ion-option>Hail damage</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Vehicle inspection Date</ion-label>
+      <ion-input type="text" [ngModel]="vehicle.inspection"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Other</ion-label>
+      <ion-textarea  [ngModel]="vehicle.other_condition_eng"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Frame No.</ion-label>
+      <ion-input type="text" [ngModel]="vehicle.frame_no"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Model No.</ion-label>
+      <ion-input type="text"  [ngModel]="vehicle.model_no"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Register No.</ion-label>
+      <ion-input type="text" [ngModel]="vehicle.reg_no"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Vehicle No.</ion-label>
+      <ion-input type="text"  [ngModel]="vehicle.vehicle_no"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Swiss Car</ion-label>
+      <ion-toggle [(ngModel)]="vehicle.swiss_car"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Vehicle Region</ion-label>
+      <ion-select [(ngModel)]="vehicle.vehicle_regions">
+        <ion-option value="ZH">Zurich</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Vehicle registration document</ion-label>
+      <ion-select [(ngModel)]="vehicle.reg_document">
+        <ion-option value="1">Available</ion-option>
+        <ion-option value="2">Will be supplied later</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Service record</ion-label>
+      <ion-select [(ngModel)]="vehicle.service_record">
+        <ion-option value="1">Available</ion-option>
+        <ion-option value="2">Incomplete</ion-option>
+        <ion-option value="3">Missing</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Number of keys</ion-label>
+      <ion-select [(ngModel)]="vehicle.no_of_keys">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <h5>2. Vehicle Damage Information</h5>
+
+    <ion-item>
+      <ion-label stacked>Vehicle Damage</ion-label>
+      <ion-toggle [(ngModel)]="vehicle.is_damage" (ionChange)="hideShowDamage()"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="!hideDamage">
+        <ion-label stacked>Body</ion-label>
+      <ion-textarea [(ngModel)]="vehicle.body_eng"></ion-textarea>
+    </ion-item>
+    <ion-item *ngIf="!hideDamage">
+        <ion-label stacked>Repairs</ion-label>
+      <ion-input type="text"  [ngModel]="vehicle.repairs"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!hideDamage">
+        <ion-label stacked>Mechanics</ion-label>
+      <ion-textarea [(ngModel)]="vehicle.mechanics_eng"></ion-textarea>
+    </ion-item>
+    
+  </ion-list>
+
+  <h6 *ngIf="!hideDamage">Vehicle Damage Images</h6>
+  <div *ngIf="!hideDamage" class="vehicle-images">
+    <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img (click)="presentActionSheet('bottomside')" [src]="vehicleDamage.bottomside" />
+    </ion-card>
+    <!-- <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img [(ngModel)]="vehicleDamage.bottomside" src="assets/images/cars/diagonal.png" />
+    </ion-card> -->
+    <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img (click)="presentActionSheet('leftside')" [src]="vehicleDamage.leftside" /> 
+    </ion-card>
+    <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img (click)="presentActionSheet('rightside')"  [src]="vehicleDamage.rightside" />
+    </ion-card>
+    <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img (click)="presentActionSheet('topside')"  [src]="vehicleDamage.topside" />
+    </ion-card>
+    <ion-card class="col col-3 card">
+      <ion-icon name="trash" class="deleteIcon"></ion-icon>
+      <img (click)="presentActionSheet('backside')"  [src]="vehicleDamage.backside" />
+    </ion-card>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="next-button">
+    <button ion-button block class="redbutton" (click)="next()">Next</button>
+  </div>
+
+</ion-content>

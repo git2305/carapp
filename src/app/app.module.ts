@@ -28,6 +28,15 @@ import { HttpModule } from '@angular/http';
 import { SecureStorage } from '@ionic-native/secure-storage';
 import { FormsModule } from '@angular/forms';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
+import {StepOnePage} from '../pages/step-one/step-one';
+import {StepTwoPage} from '../pages/step-two/step-two';
+import {StepThreePage} from '../pages/step-three/step-three';
+
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +58,9 @@ import { CountdownTimerModule } from 'ngx-countdown-timer';
     ChangeProfileDataPage,
     ChangePasswordPage,
     EmailPreferencePage,
+    StepOnePage,
+    StepTwoPage,
+    StepThreePage
   ],
   imports: [
     BrowserModule,
@@ -76,14 +88,21 @@ import { CountdownTimerModule } from 'ngx-countdown-timer';
     SearchResultsPage,
     ChangeProfileDataPage,
     ChangePasswordPage,
-    EmailPreferencePage
+    EmailPreferencePage,
+    StepOnePage,
+    StepTwoPage,
+    StepThreePage
   ],
   providers: [
     StatusBar,
     WebService,
     SplashScreen,
     SecureStorage,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    File,
+    Transfer,
+    Camera,
+    FilePath,
   ]
 })
 

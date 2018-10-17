@@ -11,10 +11,12 @@
 
   <ion-list>
     <ion-item style="border-top:none;">
-      <ion-input type="text" placeholder="1st reg. *"></ion-input>
+      <ion-label stacked>1st reg. *</ion-label>
+      <ion-input type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Model No. *"></ion-input>
+        <ion-label stacked>Model No. *</ion-label>
+      <ion-input type="text"></ion-input>
     </ion-item>
   </ion-list>
   <div style="padding:0 10px;">
@@ -23,41 +25,29 @@
 
   <div style="padding:20px">
     Search your vehicle by production duration and vehicle make and model.
-  </div>  
+  </div>
 
   <ion-list class="noMargin">
     <ion-item>
-      <ion-select>
-        <ion-option selected="true">Select Make</ion-option>
-        <ion-option>Option</ion-option>
-      </ion-select>
+        <ion-label stacked>Select Year</ion-label>
+      <ion-datetime displayFormat="YYYY" pickerFormat="YYYY" min="{{minYear}}" [(ngModel)]="year"></ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-select>
-        <ion-option selected="true">Select Model</ion-option>
-        <ion-option>Option</ion-option>
-      </ion-select>
+        <ion-label stacked>Select Month</ion-label>
+      <ion-datetime  displayFormat="MMMM" pickerFormat="MMMM" [(ngModel)]="month"></ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-select>
-        <ion-option selected="true">Select Region</ion-option>
-        <ion-option>Option</ion-option>
-      </ion-select>
+        <ion-label stacked>Search Make</ion-label>
+      <ion-input type="text"  [ngModel]="make" (ngModelChange)="searchMake($event)"></ion-input>
     </ion-item>
+    <ion-item *ngFor="let make of makes" (click)="makeSelected(make.text)">{{make.text}}</ion-item>
     <ion-item>
-      <ion-select>
-        <ion-option selected="true">--Min Year--</ion-option>
-        <ion-option>Option</ion-option>
-      </ion-select>
+        <ion-label stacked>Search Model</ion-label>
+        <ion-input type="text"  [ngModel]="model" (ngModelChange)="searchModel($event)"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-select>
-        <ion-option selected="true">--Max Year--</ion-option>
-        <ion-option>Option</ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-item *ngFor="let model of models" (click)="modelSelected(model.text)">{{model.text}}</ion-item>
   </ion-list>
-  <div style="padding:0 10px;">
+  <div class="next-button  0">
     <button ion-button block class="redbutton" (click)="next()">Next</button>
   </div>
 

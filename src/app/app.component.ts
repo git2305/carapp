@@ -21,7 +21,7 @@ import { SearchOptionPage } from '../pages/searchOption/searchOption';
 export class MyApp {
   @ViewChild(Nav) nav;
   rootPage: any;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -32,15 +32,15 @@ export class MyApp {
     }
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Add Advertisement', component: AddAdvertisementPage },
-      { title: 'How It Works', component: HowItWorksPage },
-      { title: 'Registration', component: RegistrationPage },
-      { title: 'Sell Vehicle', component: SellVehiclePage },
-      { title: 'Contact Us', component: ContactUsPage },
-      { title: 'About Us', component: AboutUsPage },
-      { title: 'Search Option', component: SearchOptionPage },
-      { title: 'My Corner', component: MyCornerPage }
+      { title: 'Home', component: HomePage, icon: 'home' },
+      { title: 'Add Advertisement', component: AddAdvertisementPage, icon: 'plus' },
+      { title: 'How It Works', component: HowItWorksPage, icon: 'home' },
+      { title: 'Registration', component: RegistrationPage, icon: 'user-plus' },
+      { title: 'Sell Vehicle', component: SellVehiclePage, icon: 'car' },
+      { title: 'Contact Us', component: ContactUsPage, icon: 'map-marker' },
+      { title: 'About Us', component: AboutUsPage, icon: 'info-circle' },
+      { title: 'Search Option', component: SearchOptionPage, icon: 'search' },
+      { title: 'My Corner', component: MyCornerPage, icon: 'user-circle' }
     ];
 
   }

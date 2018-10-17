@@ -8,7 +8,117 @@
 </ion-header>
 
 <ion-content>
+
+    <div #map id="map"></div>
+
+    
     <div class="description">
+        <ion-list>
+            
+            <ion-item>
+                <i class="fa fa-phone" item-left></i>
+                +0 55 553 40 00
+            </ion-item>
+            <ion-item>
+                <i class="fa fa-fax" item-left></i>
+                +0 55 553 40 00
+            </ion-item>
+            <ion-item>
+                <i class="fa fa-envelope" item-left></i>
+                info@ef24.ch
+            </ion-item>
+            <ion-item [navPush]="myCornerPage">
+                <i class="fa fa-globe" item-left></i>
+                ef24.ch/carlisting
+            </ion-item>
+
+        </ion-list>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>I am</ion-label>
+            <ion-select [(ngModel)]="contact.user_type">
+                <ion-option value="private_user">Private User</ion-option>
+                <ion-option value="car_dealer">Car Dealer</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Marketplace</ion-label>
+            <ion-select [(ngModel)]="contact.marketplace">
+                <ion-option value="Used car market">Used car market</ion-option>
+                <ion-option value="New cars">New cars</ion-option>
+                <ion-option value="Parts &amp; Accessory">Parts &amp; Accessory</ion-option>
+                <ion-option value="Motobikes">Motobikes</ion-option>
+                <ion-option value="Commercial vehicles">Commercial vehicles</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>I have a</ion-label>
+            <ion-select [(ngModel)]="contact.type">
+                <ion-option value="Question">Question</ion-option>
+                <ion-option value="Commendation">Commendation</ion-option>
+                <ion-option value="Complaint">Complaint</ion-option>
+                <ion-option value="Improvement">Improvement</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Topic</ion-label>
+            <ion-select [(ngModel)]="contact.topic">
+                <ion-option value="New car">New car</ion-option>
+                <ion-option value="Register">Register</ion-option>
+                <ion-option value="Add Picture">Add Picture</ion-option>
+                <ion-option value="Change car offer">Change car offer</ion-option>
+                <ion-option value="Login">Login</ion-option>
+                <ion-option value="Search">Search</ion-option>
+                <ion-option value="Payed services">Payed services</ion-option>
+                <ion-option value="Check car offer">Check car offer</ion-option>
+                <ion-option value="Misc">Misc</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>My Request</ion-label>
+            <ion-textarea type="text" [ngModel]="contact.my_request"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Form of address*</ion-label>
+            <ion-select [(ngModel)]="contact.prefix_name">
+                <ion-option value="Mrs">Mrs</ion-option>
+                <ion-option value="Mr">Mr</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>First name</ion-label>
+            <ion-input type="text" [ngModel]="contact.first_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Surname</ion-label>
+            <ion-input type="text" [ngModel]="contact.last_name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="email" [ngModel]="contact.email"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-row>
+        <ion-col>
+            <div class="next-button">
+                <button ion-button block class="redbutton" (click)="request()" >Send Request</button>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+
+
+    <!-- <div class="description">
         <ion-list>
             <ion-item [navPush]="registrationPage">
                 <ion-icon name="ios-person-add" item-left></ion-icon>
@@ -31,5 +141,5 @@
                 3rd main 4th Street ZH
             </ion-item>
         </ion-list>
-    </div>
+    </div> -->
 </ion-content>
