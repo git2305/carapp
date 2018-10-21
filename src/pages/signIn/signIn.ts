@@ -15,7 +15,7 @@ export class SignInPage {
     registrationPage = RegistrationPage;
     account: { username: string, password: string } = {
         username: 'zoye123',
-        password: 'zoye123'
+        password: '123456'
     };
 
     constructor(public navCtrl: NavController, private webService: WebService) {

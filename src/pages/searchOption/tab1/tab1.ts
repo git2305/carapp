@@ -13,13 +13,19 @@ export class tab1 {
     searchResultsPage = SearchResultsPage;
     regions: Array<{ value: string, text: string, checked: boolean }> = [];
     selectedRegion = "";
-    minYear = "";
-    maxYear = "";
+    minYear:any = "";
+    maxYear:any = "";
     make = "";
     model = "";
     makes = [];
     models = [];
+
+    
     constructor(public navCtrl: NavController, private webService: WebService) {
+
+        let date = new Date();
+        this.maxYear = date.getFullYear();
+
         this.webService.getAllRegions().subscribe(
             data => {
                 console.log(data);

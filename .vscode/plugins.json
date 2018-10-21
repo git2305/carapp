@@ -1,0 +1,1 @@
+{"plugins":["cordova-plugin-console","cordova-plugin-device","cordova-plugin-secure-storage","cordova-plugin-splashscreen","cordova-plugin-statusbar","cordova-plugin-whitelist","ionic-plugin-keyboard","cordova-plugin-camera","cordova-plugin-compat","cordova-plugin-file","cordova-plugin-file-transfer","cordova-plugin-filepath"]}

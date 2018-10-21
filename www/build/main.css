@@ -24778,60 +24778,591 @@ ion-navbar.toolbar {
   }
 }
 
-ion-navbar .toolbar-background, .menu-inner ion-toolbar .toolbar-background {
-  background: #2b2e34 !important;
+.primary-bg {
+  background-color: #488aff !important;
 }
 
-.toolbar-title {
-  color: white;
+.secondary-bg {
+  background-color: #32db64 !important;
 }
 
-.bar-button {
-  color: white;
+.common-bg {
+  background-color: #FAFBFC;
 }
 
-.menu-inner ion-content, .menu-inner .item {
-  background: red;
-  color: white;
-  font-weight: bold;
+.white-bg {
+  background-color: #fff;
 }
 
-.redbutton {
-  background-color: red;
+.detail-bg {
+  background-color: #f1f1f5;
 }
 
-.blackbutton {
-  background-color: #2b2e34;
+.light-bg {
+  background-color: #f4f4f4;
 }
 
-.item-ios {
-  padding-right: 16px;
+.dark-bg {
+  background-color: #222;
 }
 
-.tab-button {
-  color: white !important;
-  background: #2b2e34 !important;
+.green-bg {
+  background-color: #68C91F;
 }
 
-.tab-button[aria-selected=true] {
-  color: red !important;
-  background: white !important;
-  font-weight: bold;
+.profile-bg {
+  background-image: linear-gradient(135deg, #222, #488aff, #f4f4f4);
 }
 
-page-aboutus .description {
-  background: red;
-  color: white;
+.text-primary {
+  color: #488aff;
+}
+
+.text-secondary {
+  color: #32db64;
+}
+
+.text-green {
+  color: #68C91F;
+}
+
+.text-yellow {
+  color: #FDD835;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.dark-trans,
+.toast-md .toast-wrapper {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.quarter-op {
+  opacity: .25;
+}
+
+.no-paddingTRL {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.no-paddingTRB {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-paddingB {
+  padding-bottom: 0 !important;
+}
+
+.no-paddingT {
+  padding-top: 0 !important;
+}
+
+.padding-xs {
   padding: 10px;
 }
 
-page-aboutus ion-content {
-  background-image: url("https://images.template.net/wp-content/uploads/2016/06/22052347/Sky-Blue-Water-Tumblr-Background.jpg");
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-pl {
+  padding-left: 0 !important;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-marginT {
+  margin-top: 0 !important;
+}
+
+.mt-half {
+  margin-top: .5rem !important;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mb-half {
+  margin-bottom: .5rem;
+}
+
+.marginB-16px {
+  margin-bottom: 16px !important;
+}
+
+.marginB-2 {
+  margin-bottom: 2rem !important;
+}
+
+.marginT-16px {
+  margin-top: 16px !important;
+}
+
+.marginT-2 {
+  margin-top: 2rem !important;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.rlt {
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.align-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.round {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.no-round {
+  border-radius: 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.1);
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.max-width {
+  max-width: 100% !important;
+}
+
+.padding-sm {
+  padding: 1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-2x {
+  font-size: 2em;
+}
+
+.text-1x {
+  font-size: 1em;
+}
+
+.text-sm {
+  font-size: 0.7em;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.btn-facebook {
+  background-color: #3B5999;
+}
+
+.btn-twitter {
+  background-color: #00ACEE;
+}
+
+.btn-gplus {
+  background-color: #E04006;
+}
+
+ion-badge.square {
+  border-radius: 0;
+}
+
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+ion-navbar.no-border .toolbar-background {
+  border: none;
+}
+
+.list-no-border .item:first-child, .list-full-border .item:first-child {
+  border: none;
+}
+
+.list-no-border .item:last-child, .list-full-border .item:last-child {
+  border: none;
+}
+
+.list-no-border .item .item-inner, .list-full-border .item .item-inner {
+  border: none;
+}
+
+.list-full-border .item,
+.list-full-border .item:first-child,
+.list-full-border .item:last-child {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.2);
+}
+
+.list-full-border .item .item-inner,
+.list-full-border .item:first-child .item-inner,
+.list-full-border .item:last-child .item-inner {
+  border: none;
+}
+
+.item.no-border .item-inner {
+  border: none;
+}
+
+.toolbar.nav-transparent .toolbar-background {
+  background-color: rgba(86, 61, 124, 0.65);
+}
+
+.toolbar .toolbar-title img {
+  vertical-align: sub;
+  border-radius: 10%;
+}
+
+.auth-page {
+  background-color: #fff;
+}
+
+.auth-page::after {
+  content: "";
+  background: #f3f4fe;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.auth-page .scroll-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #f3f3f3;
+}
+
+.auth-page .scroll-content .login-content {
+  width: 86%;
+}
+
+.auth-page .scroll-content .login-content .logo {
+  width: 200px;
+  height: 100px;
+  margin: 20px auto 0;
+  border-radius: 10%;
+  background: url("../assets/images/logo.png") no-repeat;
+  background-size: 100%;
+}
+
+.auth-page .scroll-content .login-content .list-form {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.auth-page .scroll-content .login-content .list-form ion-item {
+  background: none;
+  padding: 0;
+}
+
+.auth-page .scroll-content .login-content .list-form ion-item:first-child {
+  border-top: none;
+}
+
+.auth-page .scroll-content .login-content .list-form ion-item:after {
+  display: none;
+}
+
+.auth-page .scroll-content .login-content .list-form ion-item ion-label {
+  font-size: 1em;
+  color: #488aff;
+}
+
+.auth-page .scroll-content .login-content .list-form ion-item input {
+  color: #488aff;
+}
+
+.user-profile .user-avatar {
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 10rem rgba(0, 0, 0, 0.25), 0 0 4rem rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 0 10rem rgba(0, 0, 0, 0.25), 0 0 4rem rgba(255, 255, 255, 0.45);
+}
+
+.user-profile .user-avatar img {
+  border-radius: 50%;
+}
+
+.user-profile .toolbar-background {
+  background-image: linear-gradient(135deg, #222, #488aff);
+}
+
+.user-profile .other-data .column:first-child {
+  border-right: 1px solid rgba(36, 50, 157, 0.25);
+}
+
+.user-list .item:last-child {
+  border-bottom: 0;
+}
+
+.user-list .item .item-inner {
+  border-color: rgba(86, 61, 124, 0.1);
+}
+
+.hotel-bg {
+  background-position: center;
+}
+
+.hotel-bg .bg-filter {
+  position: relative;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hotel-bg .bg-filter .bottom-info {
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  padding: 1rem;
+}
+
+.hotel-bg .discount {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  top: 0;
+  right: 0;
+  background-color: #68C91F;
+  color: #fff;
+}
+
+.hotel-bg .origin-price {
+  color: #C0C0C0;
+  text-decoration: line-through;
+}
+
+.hotel-bg .sale-price,
+.hotel-bg .price {
+  font-size: 1.8rem;
+}
+
+ion-slides.to-top {
+  height: auto;
+  margin-bottom: -5px;
+}
+
+ion-slides.to-top .swiper-pagination {
+  display: block !important;
+}
+
+ion-slides.to-top .swiper-pagination .swiper-pagination-bullet {
+  background: #f4f4f4;
+}
+
+.to-top {
+  height: auto;
+  margin-bottom: -5px;
+}
+
+ion-icon[ng-reflect-disabled="true"] {
+  color: #FAFBFC;
+  pointer-events: none;
+}
+
+.checkout-info span {
+  font-size: 1.2rem;
+}
+
+.md ion-header.no-shadow::after {
+  background-image: none;
+}
+
+.md ion-toolbar .button,
+.md ion-toolbar .button.activated,
+.md ion-navbar .button,
+.md ion-navbar .button.activated {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ios ion-list ion-item,
+.ios .list-hotels .hotel-bg {
+  pointer-events: none;
+}
+
+.google-map {
+  height: 160px;
+  pointer-events: none;
+  margin: 0 -20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.text-input-md {
+  margin: 0;
+  padding: 0;
+}
+
+.datetime-md {
+  margin: 13px 8px 13px 0px;
+  padding: 0px 12px 0px 5px !important;
+}
+
+.select-md .select-icon {
+  display: none;
+}
+
+.hide-card {
+  -webkit-box-shadow: none !important;
+}
+
+.profile-pic-card {
+  margin-top: 20px;
+}
+
+.custom-avatar {
+  height: 30vw;
+  width: 30vw;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+.menu-inner .item {
+  padding-left: 0px;
+}
+
+.menu-inner .item-inner {
+  padding-left: 16px;
+}
+
+.menu-inner .item-inner i.fa {
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+page-aboutus .description {
+  padding: 10px;
 }
 
 page-addadvertisement ion-select {
   max-width: 100%;
   width: 95%;
+}
+
+page-addadvertisement .next-button {
+  padding: 0 10px;
 }
 
 page-changeprofiledata .fabButton {
@@ -24841,14 +25372,9 @@ page-changeprofiledata .fabButton {
   background-color: red !important;
 }
 
-page-contactus .description {
-  margin-top: 200px;
-}
-
-page-contactus ion-content {
-  background-image: url("data:image/png;base64,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");
-  background-repeat: no-repeat;
-  background-position: 50% 10%;
+page-contactus #map {
+  width: 100%;
+  height: 280px;
 }
 
 page-home ion-slides {
@@ -24919,13 +25445,7 @@ page-home .text-center {
 }
 
 page-howitworks .description {
-  background: red;
-  color: white;
   padding: 10px;
-}
-
-page-howitworks ion-content {
-  background-image: url("https://images.template.net/wp-content/uploads/2016/06/22052347/Sky-Blue-Water-Tumblr-Background.jpg");
 }
 
 page-mycorner ion-list-header {
@@ -24972,6 +25492,10 @@ page-tab2 ion-buttons button:first-child {
 page-tab2 ion-buttons button.active {
   background: white;
   color: red;
+}
+
+page-tab2 .vehicle-categories {
+  width: 45px;
 }
 
 page-searchresults ion-row {
@@ -25046,6 +25570,96 @@ page-sellvehicle .recentSubmission {
   padding: 10px;
   color: red;
   line-height: 40px;
+}
+
+page-step-one .vehicle-images ion-card {
+  display: inline-block;
+  width: 31%;
+  margin: 2px;
+  border-radius: 0;
+  text-align: center;
+}
+
+page-step-one .vehicle-images ion-card img {
+  width: auto;
+}
+
+page-step-one .clearfix {
+  clear: both;
+}
+
+page-step-one .vehicle_document {
+  margin-top: 20px;
+}
+
+page-step-one .document-icon {
+  font-size: 9.2em;
+  color: #999;
+}
+
+page-step-one .block {
+  position: relative;
+}
+
+page-step-one .deleteIcon {
+  position: absolute !important;
+  color: #ffffff !important;
+  margin-left: 80% !important;
+}
+
+page-step-one .deleteIcon:before {
+  font-size: 30px !important;
+}
+
+page-step-one img {
+  height: 80px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+page-step-two .vehicle-images ion-card {
+  display: inline-block;
+  width: 32%;
+  margin: 2px;
+  border-radius: 0;
+  text-align: center;
+}
+
+page-step-two .vehicle-images ion-card img {
+  width: auto;
+}
+
+page-step-two .clearfix {
+  clear: both;
+}
+
+page-step-two .vehicle_document {
+  margin-top: 20px;
+}
+
+page-step-two .document-icon {
+  font-size: 9.2em;
+  color: #999;
+}
+
+page-step-two .block {
+  position: relative;
+}
+
+page-step-two .deleteIcon {
+  position: absolute !important;
+  color: #ffffff !important;
+  margin-left: 80% !important;
+}
+
+page-step-two .deleteIcon:before {
+  font-size: 30px !important;
+}
+
+page-step-two img {
+  height: 80px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 page-vehicledetails {
