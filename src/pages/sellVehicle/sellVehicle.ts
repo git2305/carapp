@@ -12,8 +12,9 @@ export class SellVehiclePage {
     vehicleDetailsPage = VehicleDetailsPage;
     auctionData = [];
     sortBy = "";
+    baseUrl:string;
     constructor(public navCtrl: NavController, private webService: WebService) {
-
+        this.baseUrl = this.webService.baseUrl;
     }
 
     ngOnInit() {

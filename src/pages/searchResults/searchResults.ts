@@ -22,7 +22,9 @@ export class SearchResultsPage {
   maxYear = "";
   bodyType = "";
   actionType:String;
+  baseUrl:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private webService: WebService) {
+    this.baseUrl = this.webService.baseUrl;
     this.title = this.navParams.get('title') ? this.navParams.get('title') : 'Search Results';
     this.subTitle = this.navParams.get('subTitle') ? this.navParams.get('subTitle') : null;
 

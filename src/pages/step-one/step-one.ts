@@ -29,7 +29,7 @@ export class StepOnePage {
   public base64Image: string;
   public imagePath: string = "assets/images/cars/";
 
-  vehicle: {
+  public vehicle: {
     brand: string,
     model: string,
     type: string,
@@ -151,11 +151,18 @@ export class StepOnePage {
     }
   }
 
+  ngOnInit() {
+    console.log(this.vehicle);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad StepOnePage');
   }
 
   next() {
+
+    console.log(this.vehicle);
+
     this.webService.step1(this.vehicle, this.vehicleDamage).subscribe(
       data => {
         console.log(data);

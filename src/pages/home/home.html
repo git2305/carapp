@@ -8,19 +8,6 @@
 </ion-header>
 
 <ion-content>
-
-  <!-- <ion-slides pager>
-    <ion-slide>
-      <img style="width:100%;" src="http://ef24.ch/carlisting/img/front/car-sld.png" />
-    </ion-slide>
-    <ion-slide>
-      <img style="width:100%;" src="http://ef24.ch/carlisting/img/front/car-sld.png" />
-    </ion-slide>
-    <ion-slide>
-      <img style="width:100%;" src="http://ef24.ch/carlisting/img/front/car-sld.png" />
-    </ion-slide>
-  </ion-slides> -->
-
   <ion-toolbar>
     <span class="recentSubmission">Recent Car Submission</span>
     <ion-select [(ngModel)]="sortBy" (ngModelChange)="sortChanged($event)">
@@ -33,13 +20,13 @@
       <ion-option value="KHL">ODOMETER HIGH-LOW</ion-option>
     </ion-select>
   </ion-toolbar>
-
+  
   <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
     <ion-card-content>
       <ion-row>
         <ion-col col-4>
           <div class="text-center">
-              <img class="vehicle-image img-thumbnail" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
+              <img class="vehicle-image img-thumbnail" src="{{baseUrl}}img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
           </div>
         </ion-col>
         <ion-col col-8>
@@ -59,39 +46,4 @@
       </ion-row>
     </ion-card-content>
   </ion-card>
-  
-  <!-- <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
-      <img class="vehicle-image" src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />
-      <countdown-timer class="countdown-timer" [timeOnly]="true" [end]= [vehicle.Vehicle.auction_ovr_tym] ></countdown-timer>
-
-      <ion-card-content>
-        <ion-card-title>
-            {{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} {{vehicle.Vehicle.type}}
-        </ion-card-title>
-        <p>
-          <ion-row>
-            <ion-col col-6 text-left>CHF{{vehicle.Vehicle.min_auction_price}}</ion-col>
-          </ion-row>
-        </p>
-        <p>
-            <ion-icon ios="ios-pin" md="md-pin"></ion-icon> {{vehicle.Vehicle.vehicle_regions}}
-        </p>
-      </ion-card-content>
-    </ion-card> -->
-    
-
-  <!-- <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
-    <img src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />
-    <ion-row no-padding>
-      <ion-col>
-        {{vehicle.Vehicle.brand}}
-      </ion-col>
-      <ion-col text-center>
-        Model : {{vehicle.Vehicle.model}}
-      </ion-col>
-      <ion-col text-right>
-        USD : {{vehicle.Vehicle.min_auction_price}}
-      </ion-col>
-    </ion-row>
-  </ion-card> -->
 </ion-content>

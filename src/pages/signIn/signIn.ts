@@ -15,7 +15,7 @@ export class SignInPage {
     registrationPage = RegistrationPage;
     account: { username: string, password: string } = {
         username: 'zoye123',
-        password: '123456'
+        password: 'zoye123'
     };
 
     constructor(public navCtrl: NavController, private webService: WebService) {
@@ -26,11 +26,14 @@ export class SignInPage {
     doLogin() {
         this.webService.login(this.account).subscribe(
             data => {
-                console.log(data);
                 if (data.success == true) {
                     this.webService.loading.dismiss();
                     this.webService.presentToast(data.message);
-                    window.localStorage.setItem('token', data.data[0].token);
+                    window.localStorage.setItem('token', data.data.userData.token);
+                    window.localStorage.setItem('firstname', data.data.userData.fname);
+                    window.localStorage.setItem('lastname', data.data.userData.lname);
+                    window.localStorage.setItem('profileImage', data.data.userData.image);
+
                     this.navCtrl.setRoot(HomePage);
                 } else {
                     this.webService.loading.dismiss();

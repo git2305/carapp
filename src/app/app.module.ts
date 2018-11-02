@@ -38,6 +38,8 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { Camera } from '@ionic-native/camera';
     HttpModule,
     FormsModule,
     IonicModule.forRoot(MyApp),
-    CountdownTimerModule.forRoot()
+    CountdownTimerModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -105,7 +108,7 @@ import { Camera } from '@ionic-native/camera';
     File,
     Transfer,
     Camera,
-    FilePath,
+    FilePath
   ]
 })
 

@@ -1,38 +1,50 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle end>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Sell Vehicle</ion-title>
+    <ion-navbar hideBackButton>
+      <button ion-button menuToggle end>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Sell Vehicle</ion-title>
     </ion-navbar>
-</ion-header>
-
-<ion-content>
+  </ion-header>
+  
+  <ion-content>
+  
     <ion-toolbar>
-    <span class="recentSubmission">Recent Car Submission</span>
-    <ion-select [(ngModel)]="sortBy" (ngModelChange)="sortChanged($event)">
-      <ion-option selected="true" value="">Sort By</ion-option>
-      <ion-option value="YLH">YEAR OLD-NEW</ion-option>
-      <ion-option value="YHL">YEAR NEW-OLD</ion-option>
-      <ion-option value="PLH">PRICE LOW-HIGH</ion-option>
-      <ion-option value="PHL">PRICE HIGH-LOW</ion-option>
-      <ion-option value="KLH">ODOMETER LOW-HIGH</ion-option>
-      <ion-option value="KHL">ODOMETER HIGH-LOW</ion-option>
-    </ion-select>
-  </ion-toolbar>
-  <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
-    <img src="http://ef24.ch/carlisting/img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />
-    <ion-row no-padding>
-      <ion-col>
-        {{vehicle.Vehicle.brand}}
-      </ion-col>
-      <ion-col text-center>
-        Model : {{vehicle.Vehicle.model}}
-      </ion-col>
-      <ion-col text-right>
-        USD : {{vehicle.Vehicle.min_auction_price}}
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-</ion-content>
+      <span class="recentSubmission">Recent Car Submission</span>
+      <ion-select [(ngModel)]="sortBy" (ngModelChange)="sortChanged($event)">
+        <ion-option selected="true" value="">Sort By</ion-option>
+        <ion-option value="YLH">YEAR OLD-NEW</ion-option>
+        <ion-option value="YHL">YEAR NEW-OLD</ion-option>
+        <ion-option value="PLH">PRICE LOW-HIGH</ion-option>
+        <ion-option value="PHL">PRICE HIGH-LOW</ion-option>
+        <ion-option value="KLH">ODOMETER LOW-HIGH</ion-option>
+        <ion-option value="KHL">ODOMETER HIGH-LOW</ion-option>
+      </ion-select>
+    </ion-toolbar>
+    
+    <ion-card *ngFor="let vehicle of auctionData" (click)="openVehicleDetailsPage(vehicle)">
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-4>
+            <div class="text-center">
+                <img class="vehicle-image img-thumbnail" src="{{baseUrl}}img/vehicle/orignal/{{vehicle.VehicleImage.file_name}}" />            
+            </div>
+          </ion-col>
+          <ion-col col-8>
+            <ion-row>
+              <ion-col col-12>
+                <p>{{vehicle.Vehicle.brand}} {{vehicle.Vehicle.model}} <span class="pull-right"><countdown-timer class="countdown-timer" [timeOnly]="true" [end]= [vehicle.Vehicle.auction_ovr_tym] ></countdown-timer></span></p>
+                <p>
+                  CHF<strong>{{vehicle.Vehicle.min_auction_price}}</strong>
+                </p>
+                <p>
+                  <i class="fa fa-road" aria-hidden="true"></i> {{vehicle.Vehicle.kilometers}} Kms
+                  <i class="fa fa-calendar mar-right-10" aria-hidden="true"></i> {{vehicle.Vehicle.first_reg}}
+                </p>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

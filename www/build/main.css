@@ -4810,7 +4810,7 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea:-ms-input-placeholder {
+textarea::-ms-input-placeholder {
   padding-left: 2px;
 }
 
@@ -4974,7 +4974,7 @@ ion-input :focus {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -12714,8 +12714,8 @@ input.text-input:-webkit-autofill {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
   -webkit-flex-direction: inherit;
   -ms-flex-direction: inherit;
   flex-direction: inherit;
@@ -12742,8 +12742,8 @@ input.text-input:-webkit-autofill {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
   -webkit-flex-direction: inherit;
   -ms-flex-direction: inherit;
   flex-direction: inherit;
@@ -18096,23 +18096,23 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 /* Coverflow */
@@ -25457,6 +25457,30 @@ page-mycorner .noBorder .item-inner {
   border-bottom: none !important;
 }
 
+page-preview-vehicle .vehicle-title {
+  font-weight: bold;
+}
+
+page-preview-vehicle .separator {
+  border-top: 1px solid #cccccc;
+}
+
+page-preview-vehicle .vehicle-detail-title {
+  margin: 10px 0 0 0 !important;
+}
+
+page-preview-vehicle ion-row {
+  padding: 0 10px !important;
+}
+
+page-preview-vehicle ion-slides {
+  height: 200px;
+}
+
+page-preview-vehicle ion-slide img {
+  height: 200px !important;
+}
+
 page-tab1 ion-select {
   max-width: 100%;
   width: 95%;
@@ -25555,9 +25579,24 @@ page-searchresults .text-center {
   text-align: center;
 }
 
+page-sellvehicle ion-slides {
+  height: 200px;
+}
+
+page-sellvehicle ion-slide img {
+  height: 200px !important;
+}
+
+page-sellvehicle ion-item {
+  background: red !important;
+  color: white !important;
+  margin: 10px 0 !important;
+}
+
 page-sellvehicle ion-row {
-  background: red;
-  color: white;
+  /*background: red; */
+  background: #FFFFFF;
+  color: #000000;
   line-height: 25px;
 }
 
@@ -25565,11 +25604,46 @@ page-sellvehicle ion-select {
   float: right;
 }
 
+page-sellvehicle ion-card {
+  margin: 8px;
+  width: 100%;
+}
+
+page-sellvehicle .card-content-md {
+  padding: 0px;
+}
+
 page-sellvehicle .recentSubmission {
   font-size: 18px;
   padding: 10px;
   color: red;
   line-height: 40px;
+}
+
+page-sellvehicle .countdown-timer {
+  /*background: red;
+        color: white;*/
+  padding: 4px;
+  font-size: 12px;
+  border-radius: 3px;
+  background: #000000;
+  color: #FFFFFF;
+}
+
+page-sellvehicle .vehicle-image {
+  margin-top: 10px;
+}
+
+page-sellvehicle .card-content-ios {
+  padding: 5px;
+}
+
+page-sellvehicle .mar-right-10 {
+  margin-left: 10px;
+}
+
+page-sellvehicle .text-center {
+  text-align: center;
 }
 
 page-step-one .vehicle-images ion-card {

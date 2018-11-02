@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { ToastController, LoadingController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import { File } from '@ionic-native/file';
 
 /*
   Generated class for the LoginService provider.
@@ -16,13 +17,12 @@ export class WebService {
   public token: string = window.localStorage.getItem("token");
   public makes: JSON;
   public models: JSON;
-  public baseUrl: string;
   public vehicleTempId: string = window.localStorage.getItem("vehicle_temp_id");
+  readonly baseUrl: string = 'http://192.168.0.99/carlisting/';
+  //readonly baseAPIUrl: string = 'http://ef24.ch/carlisting/';
 
-  constructor(public http: Http, private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
-    //this.baseUrl = "http://192.168.0.99/carlisting/";
-    this.baseUrl = "http://localhost/carlisting/";
-    //this.baseUrl = "http://ef24.ch/carlisting/";
+  constructor(public http: Http, private toastCtrl: ToastController, public loadingCtrl: LoadingController, private file: File) {
+    
   }
 
   showLoading() {
@@ -202,9 +202,6 @@ export class WebService {
     let headers = new Headers();
     headers.append('token', this.token);
     let body = new FormData();
-    //body.append('current_password', currentPassword);
-    //body.append('password', password);
-    //body.append('confirm_password', confirmPassword);
     var response = this.http.post(url, body, { headers: headers }).map(res => res.json());
     return response;
   }
@@ -232,6 +229,7 @@ export class WebService {
     if (this.vehicleTempId != null) {
       body.append('data[Vehicle][id]', this.vehicleTempId);
     }
+    console.log(vehicle);
 
     body.append('data[Vehicle][brand]', vehicle.brand);
     body.append('data[Vehicle][model]', vehicle.model);
@@ -277,13 +275,20 @@ export class WebService {
     return response;
   }
 
-  step2(vehicle, vehicleDamage) {
-    var url = this.baseUrl + "api/service_signup";
+  step2(vehicleImages) { //vehicleDocs
+    var url = this.baseUrl + "api/uploadVehicleImages";
     this.showLoading();
 
+
+    // let vehicleUploadedImages;
+    // vehicleImages.forEach(function(i) {
+      
+        
+    // });
+
     let body = new FormData();
-    body.append('data[VehicleDoc][image][]', vehicle.brand);
-    body.append('data[VehicleDoc][doc][]', vehicle.model);
+    body.append('data[VehicleDoc][image][]', vehicleImages);
+    //body.append('data[VehicleDoc][doc][]', vehicleDocs);
 
     var response = this.http.post(url, body).map(res => res.json());
     return response;
@@ -352,7 +357,7 @@ export class WebService {
 
   }
 
-  activateVehicle(vehicle, isActivate){
+  activateVehicle(vehicle, isActivate) {
     var url = this.baseUrl + "api/activateVehicle";
     this.showLoading();
 
@@ -364,13 +369,95 @@ export class WebService {
     body.append('data[Vehicle][increase_with]', vehicle.increase_with);
     body.append('data[Vehicle][transport_medium]', vehicle.transport_medium);
 
-    if( isActivate == true ){
+    if (isActivate == true) {
       body.append('data[Vehicle][is_active]', '1');
     }
 
     var response = this.http.post(url, body).map(res => res.json());
     return response;
+
+  }
+
+  updateVehicleStatus() {
+    var url = this.baseUrl + "api/activateVehicle";
+    this.showLoading();
+
+    let body = new FormData();
+    body.append('data[Vehicle][id]', this.vehicleTempId);
+    body.append('data[Vehicle][is_active]', '1');
+
+    var response = this.http.post(url, body).map(res => res.json());
+    return response;
+
+  }
+
+  getVehicleBids(vehicleTempId?) {
+    var queryString = "?";
+    if (vehicleTempId) { queryString = queryString + "vehicle_id=" + vehicleTempId + "&" }
+
+    var url = this.baseUrl + "api/getVehicleBids" + queryString;
+    this.showLoading();
+
+    let headers = new Headers();
+    headers.append('token', this.token);
+    var response = this.http.get(url, { headers: headers }).map(res => res.json());
+    return response;
+
+  }
+
+  bidVehicle(vehicleId, bidAmout){
+    var url = this.baseUrl + "api/bidVehicle";
+    this.showLoading();
+
+    let headers = new Headers();
+    headers.append('token', this.token);
+
+    let body = new FormData();
+    body.append('vehicle_id', vehicleId);
+    body.append('biding_amount', bidAmout);
+
+    var response = this.http.post(url, body, { headers: headers }).map(res => res.json());
+    return response;
+  }
+
+  getProfileData(){
+    var url = this.baseUrl + "api/getProfileData";
+    this.showLoading();
+
+    let headers = new Headers();
+    headers.append('token', this.token);
+    var response = this.http.get(url, { headers: headers }).map(res => res.json());
+    return response;
+  }
+
+  updateProfileData(company,user){
+    var url = this.baseUrl + "api/updateProfileData";
+    this.showLoading();
+
+    let headers = new Headers();
+    headers.append('token', this.token);
+
+    let body = new FormData();
+    body.append('data[Company][name]', company.name);
+    body.append('data[Company][addition]', company.addition);
+    body.append('data[Company][street]', company.street);
+    body.append('data[Company][pob]', company.pob);
+    body.append('data[Company][postcode]', company.postcode);
+    body.append('data[Company][town]', company.town);
+    body.append('data[Company][country]', company.country);
+    
+    body.append('data[User][prefix_name]', user.prefix_name);
+    body.append('data[User][fname]', user.fname);
+    body.append('data[User][lname]', user.lname);
+    body.append('data[User][phone]', user.phone);
+    body.append('data[User][mobile]', user.mobile);
+    body.append('data[User][language]', user.language);
+    body.append('data[User][site_reference]', user.site_reference);
+    
+
+    var response = this.http.post(url, body, { headers: headers }).map(res => res.json());
+    return response;
+  }
   
-}
 
 }

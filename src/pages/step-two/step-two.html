@@ -27,7 +27,7 @@
   <div class="vehicle-images">
     <ion-card class="col col-3 card" *ngFor="let photo of photos; let id = index">
       <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
-      <img [src]="photo" *ngIf="photo" (click)="presentActionSheet(id)" />
+      <img [src]="photo" (click)="presentActionSheet(id)" />
     </ion-card>
     <div class="clearfix"></div>
   </div>
@@ -42,8 +42,8 @@
   </ion-row>
 
   <div class="vehicle-images">
-      <ion-card class="col col-3 card" (click)="presentActionSheet()">
-          <i class="fa fa-file-image-o document-icon"></i>
+      <ion-card class="col col-3 card" (click)="presentActionSheetDoc()">
+          <img [src]="vehicleDocs" />
       </ion-card>
       <div class="clearfix"></div>
   </div>

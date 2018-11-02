@@ -10,10 +10,11 @@ import { VehicleDetailsPage } from '../vehicleDetails/vehicleDetails';
 export class HomePage {
   auctionData = [];
   sortBy = "";
+  baseUrl:string;
 
 
   constructor(public navCtrl: NavController, private webService: WebService) {
-    
+    this.baseUrl = this.webService.baseUrl;
   }
   ngOnInit() {
     this.fetchAuctionList();

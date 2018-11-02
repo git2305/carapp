@@ -9,8 +9,8 @@
     <ion-list>
 
         <ion-card text-center class="hide-card profile-pic-card">
-            <img src="assets/images/no-user.png" class="custom-avatar"/>
-            <h2>Aniket Panchal</h2>
+            <img [src]="profileImage" class="custom-avatar" (click)="presentActionSheet()" />
+            <h2>{{ firstname }} {{ lastname }}</h2>
         </ion-card>
 
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">

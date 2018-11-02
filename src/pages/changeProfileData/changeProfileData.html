@@ -8,43 +8,115 @@
 </ion-header>
 
 <ion-content>
-
+  <h5>Compmany Data</h5>
   <ion-list>
-    <ion-card [navPush]="vehicleDetailsPage">
-        <img src="http://www.cars.co.za/carimages_gen/BMW-M2/BMW-M2-M2-coupe_BMWM2_1c3v.jpg" />
-        <button ion-fab mini class="fabButton">
-          <ion-icon name="md-create" item-right></ion-icon>
-        </button>
+    <ion-card>
+      <img [src]="profileImage" />
+      <button ion-fab mini class="fabButton">
+        <ion-icon (click)="presentActionSheet()" name="md-create" item-right></ion-icon>
+      </button>
     </ion-card>
     <ion-item style="border-top:none;">
-      <ion-input type="text" placeholder="Company"></ion-input>
+      <ion-label stacked>Company</ion-label>
+      <ion-input type="text" [ngModel]="company.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Addition"></ion-input>
+      <ion-label stacked>Addition</ion-label>
+      <ion-input type="text" [(ngModel)]="company.addition"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Street/No"></ion-input>
+      <ion-label stacked>Street/No</ion-label>
+      <ion-input type="text" [(ngModel)]="company.street"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="PO box"></ion-input>
+      <ion-label stacked>PO box</ion-label>
+      <ion-input type="text" [(ngModel)]="company.pob"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Postcode / Town*"></ion-input>
+      <ion-label stacked>Postcode</ion-label>
+      <ion-input type="text" [(ngModel)]="company.postcode"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Country*"></ion-input>
+      <ion-label stacked>Town</ion-label>
+      <ion-input type="text" [(ngModel)]="company.town"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" placeholder="Car Dealership"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="Motorcycle Dealership"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="Commercial vehicle Dealership"></ion-input>
+      <ion-label stacked>Country</ion-label>
+      <ion-select [(ngModel)]="company.country">
+        <ion-option value="Austria">Austria</ion-option>
+        <ion-option value="Belgium">Belgium</ion-option>
+        <ion-option value="Bulgaria">Bulgaria</ion-option>
+        <ion-option value="Croatia">Croatia</ion-option>
+        <ion-option value="Czech Republic">Czech Republic</ion-option>
+        <ion-option value="Denmark">Denmark</ion-option>
+        <ion-option value="Estonia">Estonia</ion-option>
+        <ion-option value="Finland">Finland</ion-option>
+      </ion-select>
     </ion-item>
   </ion-list>
+
+  <h5>Personal details</h5>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username" readonly="readonly"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label stacked>Form of address</ion-label>
+    <ion-select [(ngModel)]="user.prefix_name">
+      <ion-option value="Mrs">Mrs</ion-option>
+      <ion-option value="Mr" selected="selected">Mr</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>First name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.fname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Surname</ion-label>
+    <ion-input type="text" [(ngModel)]="user.lname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email" readonly="readonly"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Telephone</ion-label>
+    <ion-input type="text" [(ngModel)]="user.phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Mobile</ion-label>
+    <ion-input type="text" [(ngModel)]="user.mobile"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Preferred language</ion-label>
+    <ion-select [(ngModel)]="user.language">
+      <ion-option value="German">German</ion-option>
+      <ion-option value="French">French</ion-option>
+      <ion-option value="Italian">Italian</ion-option>
+      <ion-option value="English" selected="selected">English</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>How did you find out about us?</ion-label>
+      <ion-select [(ngModel)]="user.site_reference">
+        <ion-option value="FLEET">About Fleet</ion-option>
+        <ion-option value="AD">Advertisement</ion-option>
+        <ion-option value="EVENT">Event</ion-option>
+        <ion-option value="GARAGE">Le Garage</ion-option>
+        <ion-option value="OTHER">Other</ion-option>
+        <ion-option value="RECOMMENDATION">Personal recommendation</ion-option>
+        <ion-option value="SEARCHENGINE">Search engine</ion-option>
+      </ion-select>
+    </ion-item>
   <div style="padding:0 10px;">
     <button ion-button block class="redbutton" (click)="save()">Save</button>
-  </div>  
+  </div>
 </ion-content>
